@@ -4,7 +4,7 @@ import plotly.express as px
 import numpy as np
 
 # Load dataset
-df = pd.read_csv('/Users/fatihakguc/Downloads/vehicles_us.csv')
+df = pd.read_csv('vehicles_us.csv')
 
 # Data cleaning
 df[['brand', 'model_name']] = df['model'].str.split(' ', n=1, expand=True)
@@ -138,3 +138,4 @@ df_filtered = df[df['brand'].isin(brand_filter_4)]
 if show_scatter:
     fig = px.scatter(df_filtered, x='odometer', y='price', color='brand', title='Vehicle Price vs Odometer by Brand')
     st.plotly_chart(fig)
+    
