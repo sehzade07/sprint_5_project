@@ -22,6 +22,7 @@ df = df.reset_index(drop=True)
 current_year = 2019
 df['age'] = current_year - df['model_year']
 df['annual_mil'] = (df['odometer'] / df['age']).round()
+df['price'] = df['price'].astype('float')
 
 # Streamlit Headers and Content
 st.header('Data viewer')
